@@ -67,7 +67,7 @@ btnLeftElement.addEventListener('click', () => {
     btnRightElement.classList.toggle('split');
     btnLeftElement.innerHTML = 'STOP';
     btnRightElement.innerHTML = 'SPLIT';
-    setStartBtn();
+    setStartBtn()
   } else {
     
     btnLeftElement.classList.toggle('stop');
