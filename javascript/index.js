@@ -67,14 +67,16 @@ btnLeftElement.addEventListener('click', () => {
     btnRightElement.classList.toggle('split');
     btnLeftElement.innerHTML = 'STOP';
     btnRightElement.innerHTML = 'SPLIT';
-
+    setStartBtn();
   } else {
+    
     btnLeftElement.classList.toggle('stop');
     btnLeftElement.classList.toggle('start');
     btnRightElement.classList.toggle('split');
     btnRightElement.classList.toggle('reset');
     btnLeftElement.innerHTML = 'START';
     btnRightElement.innerHTML = 'RESET';
+    setStopBtn();
   }
 
 
@@ -83,6 +85,11 @@ btnLeftElement.addEventListener('click', () => {
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
   
-  if ( btnLeftElement.innerHTML === 'START' ){}
+  if ( btnLeftElement.innerHTML === 'START' ){
+    setResetBtn();
+  } else {
+    setSplitBtn();
+  }
 
-});
+}
+);
