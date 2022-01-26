@@ -16,7 +16,7 @@ const splitsElement = document.getElementById('splits');
 function printTime() {
   printMinutes();
   printSeconds();
-  printMilliseconds();
+ // printMilliseconds();
 }
 
 function printMinutes() {
@@ -33,6 +33,7 @@ function printSeconds() {
   
   secDecElement.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[1];
 
+}
 // ==> BONUS
 function printMilliseconds() {
   // ... your code goes here
@@ -61,20 +62,19 @@ function setResetBtn() {
 btnLeftElement.addEventListener('click', () => {
   
   if ( btnLeftElement.innerHTML === 'START' ){
-    btnLeftElement.classList.toggle('start', );
+    btnLeftElement.classList.toggle('start');
     btnLeftElement.classList.toggle('stop');
+    btnLeftElement.innerHTML = 'STOP';
     btnRightElement.classList.toggle('reset');
     btnRightElement.classList.toggle('split');
-    btnLeftElement.innerHTML = 'STOP';
     btnRightElement.innerHTML = 'SPLIT';
-    setStartBtn()
+    setStartBtn();
   } else {
-    
     btnLeftElement.classList.toggle('stop');
     btnLeftElement.classList.toggle('start');
+    btnLeftElement.innerHTML = 'START';
     btnRightElement.classList.toggle('split');
     btnRightElement.classList.toggle('reset');
-    btnLeftElement.innerHTML = 'START';
     btnRightElement.innerHTML = 'RESET';
     setStopBtn();
   }
@@ -85,11 +85,11 @@ btnLeftElement.addEventListener('click', () => {
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
   
-  if ( btnLeftElement.innerHTML === 'START' ){
+   if ( btnLeftElement.innerHTML === 'START' ){
     setResetBtn();
   } else {
     setSplitBtn();
-  }
+  } 
 
 }
 );
