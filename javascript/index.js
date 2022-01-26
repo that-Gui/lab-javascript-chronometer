@@ -14,52 +14,75 @@ const milUniElement = document.getElementById('milUni');
 const splitsElement = document.getElementById('splits');
 
 function printTime() {
-  // ... your code goes here
+  printMinutes();
+  printSeconds();
+  printMilliseconds();
 }
 
 function printMinutes() {
-  // ... your code goes here
+  
+  minDecElement.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMinutes())[0];
+
+  minUniElement.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getMinutes())[1];
+
 }
 
 function printSeconds() {
-  // ... your code goes here
-}
+  
+  secDecElement.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[0];
+  
+  secDecElement.innerHTML = chronometer.computeTwoDigitNumber(chronometer.getSeconds())[1];
 
 // ==> BONUS
 function printMilliseconds() {
   // ... your code goes here
 }
 
-function printSplit() {
-  // ... your code goes here
-}
-
-function clearSplits() {
-  // ... your code goes here
-}
 
 function setStopBtn() {
-  // ... your code goes here
+  chronometer.stop();
 }
 
 function setSplitBtn() {
-  // ... your code goes here
+  
 }
 
 function setStartBtn() {
-  // ... your code goes here
+
+  chronometer.start(printTime());
+
 }
 
 function setResetBtn() {
-  // ... your code goes here
+  chronometer.reset();
 }
 
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
-  // ... your code goes here
+  
+  if ( btnLeftElement.innerHTML === 'START' ){
+    btnLeftElement.classList.toggle('start', );
+    btnLeftElement.classList.toggle('stop');
+    btnRightElement.classList.toggle('reset');
+    btnRightElement.classList.toggle('split');
+    btnLeftElement.innerHTML = 'STOP';
+    btnRightElement.innerHTML = 'SPLIT';
+
+  } else {
+    btnLeftElement.classList.toggle('stop');
+    btnLeftElement.classList.toggle('start');
+    btnRightElement.classList.toggle('split');
+    btnRightElement.classList.toggle('reset');
+    btnLeftElement.innerHTML = 'START';
+    btnRightElement.innerHTML = 'RESET';
+  }
+
+
 });
 
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
-  // ... your code goes here
+  
+  if ( btnLeftElement.innerHTML === 'START' ){}
+
 });
